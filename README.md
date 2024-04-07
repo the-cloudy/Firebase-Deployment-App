@@ -17,6 +17,14 @@ Configure Terraform:
 Create a file named main.tf in your project directory.
 
 Define the GCP project name and region using variables:
+variable "project_id" {
+  type = string
+}
+
+variable "region" {
+  type = string
+}
+
 (Optional) Configure additional Firebase resources like Authentication, Database, Cloud Storage, etc. Refer to the official documentation for available resources: https://firebase.google.com/docs/projects/terraform/get-started
 
 Initialize and Deploy Firebase Project:
