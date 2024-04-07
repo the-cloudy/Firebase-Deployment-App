@@ -24,7 +24,19 @@ variable "project_id" {
 variable "region" {
   type = string
 }
+Provision the GCP project using google_project:
+provider "google" {
+  project = var.project_id
+  region  = var.region
+}
 
+resource "google_project" "project" {
+  name = var.project_id
+}
+Register your Firebase app (replace your-app-name):
+resource "google_firebase_app" "app" {
+  name = "your-app-name"
+}
 (Optional) Configure additional Firebase resources like Authentication, Database, Cloud Storage, etc. Refer to the official documentation for available resources: https://firebase.google.com/docs/projects/terraform/get-started
 
 Initialize and Deploy Firebase Project:
